@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Will You Be My Valentine?</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #ffebee;
+      font-family: 'Arial', sans-serif;
+      overflow: hidden;
+    }
+    .container {
+      text-align: center;
+      position: relative;
+    }
+    h1 {
+      font-size: 3rem;
+      color: #d32f2f;
+    }
+    .buttons {
+      margin-top: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 1.2rem;
+      margin: 0 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    #yesButton {
+      background-color: #4caf50;
+      color: white;
+    }
+    #noButton {
+      background-color: #f44336;
+      color: white;
+    }
+    #noButton:hover {
+      position: absolute;
+    }
+    .heart {
+      position: absolute;
+      font-size: 3rem;
+      color: #d32f2f;
+      animation: float 6s infinite ease-in-out;
+    }
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0); }
+      25% { transform: translate(200px, -150px); }
+      50% { transform: translate(-200px, 150px); }
+      75% { transform: translate(200px, 150px); }
+    }
+    .hidden {
+      display: none;
+    }
+    .message {
+      margin-top: 20px;
+      font-size: 1.5rem;
+      color: #d32f2f;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Will You Be My Valentine?</h1>
+    <div class="buttons">
+      <button id="yesButton">Yes</button>
+      <button id="noButton">No</button>
+    </div>
+    <div class="message hidden" id="responseMessage">
+      I knew you'd say yes! 💖<br>
+      Let's meet today <strong>AMIRAA LOVE UUUU GIRL  mkhyb rassk 
+    </div>
+    <div class="heart">🎈</div>
+  </div>
+
+  <script>
+    const yesButton = document.getElementById('yesButton');
+    const noButton = document.getElementById('noButton');
+    const responseMessage = document.getElementById('responseMessage');
+    const heart = document.querySelector('.heart');
+
+    noButton.addEventListener('mouseover', () => {
+      noButton.style.position = 'absolute';
+      noButton.style.left = `${Math.random() * 80}%`;
+      noButton.style.top = `${Math.random() * 80}%`;
+    });
+
+    yesButton.addEventListener('click', () => {
+      responseMessage.classList.remove('hidden');
+      yesButton.classList.add('hidden');
+      noButton.classList.add('hidden');
+      heart.classList.add('hidden');
+    });
+  </script>
+</body>
+</html>
